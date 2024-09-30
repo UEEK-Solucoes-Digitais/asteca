@@ -1,0 +1,348 @@
+.light-mode {
+    @greyBackground: #dbdbdb;
+    @primaryColorDark: #003aab;
+
+    @redColorDark: #fd5b71;
+    @greenColorDark: #288a3e;
+    @yellowColorDark: #ff8a00;
+    @purpleColorDark: #5a02ac;
+    @blueColorDark: #003aab;
+
+    background: #f8f8f8;
+    color: #000000;
+
+    .image-tips .icon {
+        background: @yellowColorDark;
+    }
+
+    #login-page {
+        .login-form {
+            background: #fff;
+            border: none;
+            box-shadow: 0 0 124px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+
+            .form-logo {
+                filter: brightness(0);
+
+                // display: none;
+
+                // &.logo-dark {
+                //     display: block;
+                // }
+            }
+
+            #form-login .input-group {
+                border: 1px solid @blueColorDark;
+
+                iconify-icon {
+                    color: @blueColorDark;
+                }
+            }
+        }
+    }
+
+    .btn-geral {
+        background: @blueColorDark;
+
+        &:hover {
+            background: darken(@blueColorDark, 5%);
+        }
+    }
+
+    .btn-blue-outline {
+        background: transparent;
+        border-color: @blueColorDark;
+        color: @blueColorDark;
+
+        &:hover,
+        &.active {
+            background: @blueColorDark;
+            color: #fff;
+        }
+    }
+
+    .btn-green {
+        background: @greenColorDark;
+
+        &:hover {
+            background: darken(@greenColorDark, 5%);
+        }
+    }
+
+    .btn-purple {
+        background: @purpleColorDark;
+
+        &:hover {
+            background: darken(@purpleColorDark, 5%);
+        }
+    }
+
+    .btn-blue {
+        background: @blueColorDark;
+
+        &:hover {
+            background: darken(@blueColorDark, 5%);
+        }
+    }
+
+    .btn-yellow {
+        background: @yellowColorDark;
+
+        &:hover {
+            background: darken(@yellowColorDark, 5%);
+        }
+    }
+
+    .btn-red {
+        background: @redColorDark;
+
+        &:hover {
+            background: darken(@redColorDark, 5%);
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    label,
+    .geral-text {
+        color: #000000;
+    }
+
+    .blue-background {
+        background: #bfbfbf;
+    }
+
+    .default-form .default-input-group .geral-input {
+        border-color: #000;
+        color: #000;
+
+        option {
+            background: #fff;
+        }
+
+        &::-webkit-input-placeholder {
+            color: #777777;
+        }
+
+        &:-ms-input-placeholder {
+            color: #777777;
+        }
+
+        &::placeholder {
+            color: #777777;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: #000 !important;
+        }
+        &:active,
+        &:focus,
+        &:hover {
+            border-bottom: 1px solid #000;
+        }
+
+        &.red-border {
+            border-color: @redColorDark;
+        }
+    }
+
+    .default-form {
+        .default-input-group {
+            label {
+                color: #000;
+            }
+        }
+
+        .image-preview .preview-img {
+            border: 2px dashed #000;
+
+            &.w-background {
+                border: 2px dashed transparent;
+            }
+        }
+    }
+
+    a.geral-text:hover {
+        color: @primaryColorDark;
+    }
+
+    .user-actions .dropdown-menu {
+        background: @primaryColorDark;
+
+        li a {
+            color: #fff;
+        }
+    }
+
+    .nav-button .span-menu {
+        background: #000;
+    }
+
+    .header-nav .nav-mobile-logo img {
+        filter: brightness(0);
+    }
+
+    aside.general-dashboard-aside {
+        nav {
+            background: @greyBackground;
+        }
+
+        .sidebar-divider {
+            background: #fff;
+        }
+
+        .sidebar-head .sidebar-logo img {
+            filter: brightness(0);
+            // display: none;
+
+            // &.logo-light-mode {
+            //     display: block;
+            // }
+        }
+
+        .sidebar-links {
+            .label-links {
+                color: #222;
+
+                &-collapsed {
+                    color: #222;
+                }
+            }
+
+            .sidebar-link {
+                color: #000000;
+
+                &:hover,
+                &.active {
+                    color: @primaryColorDark;
+                }
+            }
+        }
+    }
+
+    .content-file {
+        background: @greyBackground;
+    }
+
+    div.dataTables_wrapper {
+        div.dataTables_filter input {
+            border-bottom: 1px solid #000;
+            color: #000;
+        }
+
+        div.dataTables_length {
+            label:after {
+                background: url(https://api.iconify.design/akar-icons/chevron-down.svg?color=black&height=18)
+                    no-repeat center center / contain;
+            }
+
+            select {
+                border-bottom: 1px solid #000;
+                color: #000;
+            }
+        }
+    }
+
+    .dataTables_paginate .page-item .page-link {
+        color: #000;
+    }
+
+    .dataTable thead tr {
+        background: @primaryColorDark;
+
+        .option-table-area {
+            input[type="checkbox"]:checked + .checkbox-area {
+                background: #ffffff;
+            }
+
+            .checkbox-area {
+                border: 1px solid #ffffff;
+
+                iconify-icon {
+                    color: @primaryColorDark;
+                }
+            }
+        }
+    }
+
+    .option-table-area {
+        input[type="checkbox"]:checked + .checkbox-area {
+            background: @blueColorDark;
+        }
+
+        .checkbox-area {
+            border: 1px solid @blueColorDark;
+        }
+    }
+
+    .dataTable tbody tr {
+        background: #d1d1d1;
+        color: #000;
+
+        &.even {
+            background: #c0c0c0;
+        }
+    }
+
+    .dataTables_paginate .page-item.active .page-link,
+    .dataTables_paginate .page-item:hover:not(.disabled) .page-link,
+    .dataTables_paginate .page-item:active .page-link {
+        color: @greenColorDark;
+    }
+
+    .btn-redirect {
+        background: @blueColorDark;
+
+        &:hover {
+            background: darken(@blueColorDark, 5%);
+        }
+    }
+
+    .property-saw a {
+        color: #000;
+    }
+
+    .small-notifications-area {
+        .box-small-response {
+            border: 2px solid #a1a1a1;
+
+            p {
+                color: #000;
+            }
+
+            iconify-icon {
+                &.success {
+                    color: @greenColorDark;
+                }
+
+                &.error {
+                    color: @redColorDark;
+                }
+            }
+
+            svg {
+                &.success {
+                    color: @greenColorDark;
+                }
+
+                &.error {
+                    color: @redColorDark;
+                }
+            }
+        }
+    }
+    .fixed-action-form {
+        background: #f9f9f9;
+    }
+}

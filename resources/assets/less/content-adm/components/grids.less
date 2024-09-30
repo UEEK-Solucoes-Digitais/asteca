@@ -1,0 +1,59 @@
+/* Grids do site  */
+
+.geral-grid-div{
+	display: grid;
+	grid-gap: 20px;
+
+	&.column-2{
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 30px;
+	}
+
+	&.column-3{
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	&.column-4{
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 20px 30px;
+	}
+
+	&.column-5{
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	&.column-6{
+		grid-template-columns: repeat(6, 1fr);
+	}
+
+}
+
+.geral-flex-div{
+	align-items: center;
+	display: flex;
+	grid-gap: 15px;
+	overflow-y: hidden;
+
+	&.flex-column{
+		align-items: unset;
+		flex-direction: column;
+	}
+
+	&.flex-column-reverse{
+		align-items: unset;
+		flex-direction: column-reverse;
+	}
+
+	&.flex-row{
+		flex-direction: row;
+	}
+
+	&.flex-row-reverse{
+		flex-direction: row-reverse;
+	}
+
+	&.flex-space-between{
+		justify-content: space-between;
+	}
+
+}

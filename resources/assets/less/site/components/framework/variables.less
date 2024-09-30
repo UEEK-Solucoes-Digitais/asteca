@@ -1,0 +1,64 @@
+@import (css) url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+// Altere o font-family do body por aqui
+@font_family: "Inter", sans-serif;
+
+@primaryColor: #791214;
+@secondaryColor: #e94f2d;
+@backgroundGrayColor: #DBDBDB;
+@defaultColor: #fff;
+
+.soft-transition (@time: 0.2s, @effect: ease) {
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    -webkit-transition: all @time @effect;
+    -moz-transition: all @time @effect;
+    -o-transition: all @time @effect;
+    transition: all @time @effect;
+}
+
+.btn-style(@color: @defaultColor, @textTransform: none, @padding: 13px 30px, @fontWeight: 600, @fontSize: 18px, @border: 1px solid transparent, @background: @primaryColor) {
+    align-items: center;
+    border: @border;
+    background: @background;
+    border-radius: 50px;
+    color: @color;
+    display: flex;
+    font-style: normal;
+    font-weight: @fontWeight;
+    font-size: @fontSize;
+    line-height: 22px;
+    text-align: center;
+    padding: @padding;
+    max-width: fit-content;
+    .soft-transition();
+
+    &.disabled {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        box-shadow: none;
+        background: darken(@background, 5%);
+        color: @color;
+        outline: 0;
+        text-decoration: none;
+    }
+}
+
+.title-style(@fontWeight: bold, @fontSize: 32px, @color: #000, @marginBottom: 20px, @lineHeight: 40px) {
+    color: @color;
+    font-weight: @fontWeight;
+    font-size: @fontSize;
+    line-height: @lineHeight;
+    margin-bottom: @marginBottom;
+}
+
+.text-style(@fontSize: 16px, @fontWeight: normal, @color: #000, @lineHeight: 28px) {
+    color: @color;
+    font-weight: @fontWeight;
+    font-size: @fontSize;
+    line-height: @lineHeight;
+}

@@ -1,0 +1,198 @@
+div.dataTables_wrapper div.dataTables_length select {
+    margin: 0 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    .text-style(@color: #fff);
+    position: relative;
+    z-index: 2;
+
+    option {
+        color: black;
+
+        &:first-child {
+            color: #fff;
+        }
+    }
+
+    &:focus,
+    &:active {
+        box-shadow: none;
+        outline: 0;
+    }
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 9px;
+        right: 60px;
+        background: url(https://api.iconify.design/akar-icons/chevron-down.svg?color=white&height=18)
+            no-repeat center center / contain;
+        height: 15px;
+        width: 15px;
+        z-index: 1;
+    }
+}
+
+div.table-responsive > div.dataTables_wrapper > div.row {
+    margin: 10px 0;
+}
+
+.table {
+    color: #ffffff;
+}
+
+.table td,
+.table th {
+    border: none !important;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    padding: 10px 0;
+    .text-style(@color: #fff);
+
+    &::-webkit-input-placeholder {
+        color: #9a9a9a;
+    }
+
+    &:-ms-input-placeholder {
+        color: #9a9a9a;
+    }
+
+    &::placeholder {
+        color: #9a9a9a;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: #fff !important;
+    }
+
+    &.red-border {
+        border-color: @redColor;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #fff;
+        border-radius: 0;
+        box-shadow: none;
+        outline: 0;
+    }
+}
+
+table.dataTable {
+    border-spacing: 0 15px;
+}
+
+.dataTable thead tr {
+    background: #383838;
+    color: #fff;
+
+    th {
+        font-weight: 500;
+        padding: 20px 10px;
+
+        b {
+            text-decoration: underline;
+        }
+
+        &:first-child {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            padding-left: 15px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.dataTable tbody tr {
+    background: #424344;
+
+    td {
+        &:first-child {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            padding-left: 15px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding-right: 15px;
+        }
+    }
+
+    &.even {
+        background: #383838;
+    }
+
+    &.disabled {
+        background: #b35151;
+    }
+}
+
+table.dataTable td {
+    font-weight: 300;
+}
+
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+    position: absolute;
+    bottom: 50%;
+    display: block;
+    opacity: 0.3;
+    transform: translate(0, 50%);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.dataTables_paginate {
+    .page-item {
+        .page-link {
+            color: #fff;
+            background-color: transparent;
+            border: none !important;
+            .soft-transition();
+        }
+
+        &.active,
+        &:hover:not(.disabled),
+        &:active {
+            .page-link {
+                color: @greenColor;
+            }
+        }
+    }
+}

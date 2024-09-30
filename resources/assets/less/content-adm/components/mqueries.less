@@ -1,0 +1,214 @@
+@media only screen and (max-width: 1600px) {
+    #login-page .login-form {
+        min-width: 500px;
+        padding: 50px;
+    }
+
+    aside.general-dashboard-aside {
+        .sidebar-links {
+            .group-links {
+                margin-bottom: 20px;
+            }
+
+            .sidebar-link {
+                padding: 10px 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .content-wrap {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    aside.general-dashboard-aside {
+        left: unset;
+        right: -100%;
+        width: 30%;
+
+        &:hover {
+            width: undefined !important;
+        }
+
+        .sidebar-head-collapsed {
+            display: none !important;
+        }
+
+        .sidebar-head-items {
+            display: flex;
+            justify-content: space-between;
+
+            .nav-toggle {
+                padding-top: 10px;
+
+                .nav-button .span-menu {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(6px, 5px);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(-45deg) translate(0px, 1px);
+                    }
+
+                    &:nth-child(3) {
+                        // opacity: 0;
+                        transform: rotate(0deg) scale(0, 0);
+                    }
+                }
+            }
+        }
+
+        .sidebar-head {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 15px;
+
+            span {
+                text-align: left;
+            }
+        }
+
+        .sidebar-links .label-links {
+            display: block !important;
+
+            &-collapsed {
+                display: none !important;
+            }
+        }
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .user-actions .dropdown-menu {
+        padding: 15px 20px;
+        top: 15px !important;
+        left: -80px !important;
+
+        &.show {
+            width: 210px;
+        }
+    }
+
+    h1,
+    h2 {
+        font-size: 21px;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+    .header-nav {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .nav-mobile-logo {
+            display: block;
+
+            img {
+                height: 50px;
+            }
+        }
+    }
+
+    .user-actions {
+        grid-gap: 8px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    aside.general-dashboard-aside {
+        width: 50%;
+    }
+
+    .geral-grid-div.column-2 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .default-form .image-preview .preview-img {
+        height: 300px !important;
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .content-wrap {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .blue-background {
+        padding: 20px;
+    }
+
+    div.dataTables_wrapper .row > * {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: flex-start;
+    }
+
+    .header-nav .nav-mobile-logo img {
+        height: 35px;
+    }
+
+    aside.general-dashboard-aside {
+        width: 80%;
+    }
+
+    table.dataTable thead > tr > th.sorting_asc,
+    table.dataTable thead > tr > th.sorting_desc,
+    table.dataTable thead > tr > th.sorting,
+    table.dataTable thead > tr > td.sorting_asc,
+    table.dataTable thead > tr > td.sorting_desc,
+    table.dataTable thead > tr > td.sorting {
+        padding-right: 50px;
+    }
+
+    .content-file {
+        padding: 15px;
+    }
+
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_filter,
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
+        text-align: left;
+    }
+
+    .dataTables_wrapper {
+        padding-bottom: 20px;
+    }
+
+    .custom-modal .content {
+        min-width: unset;
+        width: 90%;
+    }
+
+    .content-wrap.login-page {
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+    }
+
+    #login-page .login-form {
+        min-width: unset;
+        padding: 20px;
+        width: 90%;
+
+        #form-login .error-text {
+            display: block;
+        }
+    }
+}

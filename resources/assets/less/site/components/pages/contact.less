@@ -1,0 +1,49 @@
+.first-section {
+    &.contact-section {
+        background: white;
+        padding-bottom: 60px;
+
+        .content {
+            display: flex;
+            gap: 240px;
+        }
+    }
+}
+
+#send-contact {
+    width: 40%;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    div:nth-child(5) {
+        margin-bottom: 50px;
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    input,
+    textarea {
+        border: 1px solid #E4E4E4;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 12px 12px;
+        resize: none;
+
+        &::placeholder {}
+    }
+}
+
+.map-section {
+    iframe {
+        max-height: 275px;
+        width: 100%;
+    }
+}

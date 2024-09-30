@@ -1,0 +1,309 @@
+// Conteúdo de blocos boxes, como as estatísticas e cronogramas
+
+.default-icon-w-circle {
+    position: relative;
+    width: fit-content;
+
+    .circle {
+        background: #f9f7fb;
+        border-radius: 999px;
+        height: 100px;
+        width: 100px;
+    }
+
+    svg,
+    iconify-icon {
+        color: @primaryColor;
+        bottom: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    svg {
+        height: 40px;
+        width: 40px;
+    }
+
+    iconify-icon {
+        font-size: 40px;
+    }
+
+    &.sidebar-style {
+        margin: 0 auto;
+
+        .circle {
+            height: 130px;
+            width: 130px;
+        }
+
+        svg {
+            height: 50px;
+            width: 50px;
+        }
+
+        iconify-icon {
+            font-size: 50px;
+        }
+    }
+}
+
+.default-box {
+    background: #ffffff;
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+    padding: 20px;
+
+    &.pd-30 {
+        padding: 30px;
+    }
+}
+
+.resume-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+
+    .resume-box {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        min-height: 170px;
+
+        .resume-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            .resume-title {
+                align-items: center;
+                display: flex;
+                text-transform: uppercase;
+                .text-style(@fontSize: 13px, @color: @darkPrimaryColor);
+                .soft-transition(@time: 0.3s);
+
+                .iconify,
+                svg {
+                    color: @primaryColor;
+                    margin-left: 10px;
+                }
+            }
+
+            .resume-statistic {
+                .title-style(@fontSize: 55px, @lineHeight: 50px);
+                .soft-transition(@time: 0.3s);
+            }
+        }
+
+        &:hover {
+            text-decoration: none;
+
+            .resume-title,
+            .resume-statistic {
+                color: @primaryColor;
+            }
+        }
+    }
+}
+
+.number-box {
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+
+    .geral-text {
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    svg,
+    iconify-icon {
+        color: @disabledColor;
+        .soft-transition();
+    }
+
+    &.link-box {
+        .soft-transition();
+
+        &:hover {
+            svg,
+            iconify-icon {
+                color: @textColor;
+            }
+        }
+    }
+}
+
+.date-box {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+
+    .date-title {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        svg,
+        iconify-icon {
+            color: @disabledColor;
+            .soft-transition();
+        }
+
+        svg {
+            height: 22px;
+            width: 22px;
+        }
+        iconify-icon {
+            font-size: 22px;
+        }
+    }
+
+    .date-infos {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .general {
+            align-items: center;
+            display: flex;
+            grid-gap: 5px;
+        }
+    }
+
+    &:hover {
+        .date-title svg,
+        .date-title iconify-icon {
+            color: @primaryColor;
+        }
+    }
+}
+
+.option-checkbox {
+    position: relative;
+
+    input[type="radio"] {
+        cursor: pointer;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    &:hover .client-box,
+    input[type="radio"]:checked + .client-box {
+        border-color: @primaryColor;
+        box-shadow: inset 0 0 0 2px @primaryColor;
+    }
+}
+
+.client-box {
+    box-shadow: inset 0 0 0 0 @primaryColor;
+    display: flex;
+    grid-gap: 15px;
+    .soft-transition();
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        border-color: @primaryColor;
+        box-shadow: inset 0 0 0 2px @primaryColor;
+    }
+}
+
+.financial-box {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    .geral-text {
+        font-weight: 500;
+    }
+
+    .percentual-finance {
+        background: #ebebeb;
+        border-radius: 40px;
+        display: flex;
+        height: 5px;
+        width: 100%;
+
+        .background {
+            background: @redColor;
+            border-radius: 40px;
+            display: flex;
+            height: 100%;
+            .soft-transition();
+        }
+    }
+
+    .hide {
+        display: none;
+        font-size: 14px;
+    }
+
+    input {
+        border: none;
+        border-bottom: 1px solid transparent;
+        box-shadow: none;
+        border-radius: 0;
+        outline: 0;
+        .soft-transition();
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: none;
+        }
+    }
+
+    .input-area.green-color input {
+        color: @greenColor;
+        width: 26px;
+
+        &.disabled {
+            background: #eaf9ee;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: none;
+            border-bottom: 1px solid @greenColor;
+        }
+    }
+
+    .input-area.red-color input {
+        color: @redColor;
+        width: 15px;
+
+        &.disabled {
+            background: #fff2f2;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: none;
+            border-bottom: 1px solid @redColor;
+        }
+    }
+}
+
+.sidebar-items {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+}

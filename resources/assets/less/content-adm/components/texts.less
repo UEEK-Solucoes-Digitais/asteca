@@ -1,0 +1,142 @@
+/* Estilos de textos do site */
+
+.geral-text {
+    .text-style();
+
+    &.type-error {
+        color: @redColor;
+    }
+
+    &.type-warning {
+        color: #ff8c21;
+    }
+
+    &.type-success {
+        color: @greenColor;
+    }
+
+    &.bold {
+        font-weight: 500;
+    }
+
+    a {
+        color: @primaryColor;
+        text-decoration: none;
+        font-weight: 500;
+        .soft-transition();
+
+        &:hover {
+            color: darken(@primaryColor, 5%);
+        }
+    }
+}
+
+.font-20 {
+    .text-style(@fontSize: 20px);
+}
+
+a.geral-text {
+    align-items: center;
+    display: flex;
+
+    svg,
+    iconify-icon {
+        margin-left: 5px;
+    }
+
+    &:hover {
+        color: @primaryColor;
+    }
+
+    &.flex-row-reverse {
+        svg,
+        iconify-icon {
+            margin-left: 0;
+            margin-right: 5px;
+        }
+    }
+
+    &.back-link {
+        text-decoration: underline;
+
+        svg,
+        iconify-icon {
+            margin-left: 0;
+            margin-right: 5px;
+        }
+
+        svg {
+            height: 17px;
+            width: 17px;
+        }
+
+        iconify-icon {
+            font-size: 18px;
+        }
+
+        &:hover {
+            color: @darkPrimaryColor;
+            text-decoration: underline;
+        }
+    }
+
+    &.configuration-link {
+        justify-content: space-between;
+        opacity: 0.4;
+        width: 100%;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: @primaryColor;
+            opacity: 1;
+        }
+    }
+}
+
+.geral-title {
+    .title-style();
+
+    &.uppercase {
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+}
+
+.geral-subtitle {
+    .title-style(@fontSize: 16px, @lineHeight: 20px);
+
+    &.uppercase {
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+}
+
+.primary-color {
+    color: @primaryColor;
+}
+
+.dark-primary-color {
+    color: @darkPrimaryColor;
+}
+
+.green-color {
+    color: @greenColor;
+}
+
+.red-color {
+    color: @redColor;
+}
+
+.white-color {
+    color: #fff;
+}
+
+.ck {
+    p,
+    span,
+    li,
+    a {
+        color: #000;
+    }
+}

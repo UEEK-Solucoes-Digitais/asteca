@@ -1,0 +1,55 @@
+@import 'variables.less';
+
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing:antialiased;
+	   -moz-font-smoothing:antialiased;
+		-ms-font-smoothing:antialiased;
+		 -o-font-smoothing:antialiased;
+		 	font-smoothing:antialiased;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+br { clear: both; }
+
+input, textarea, select { outline: none; }
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: @backgroundColor;
+    font-family: "Rubik";
+	.text-style();
+}
+
+strong, b { font-weight: 500; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+h1, h2{.title-style()}
+h3, h4, h5, h6{.title-style(@fontSize: 20px)}
+
+ul { margin: 0; margin-bottom: 0; list-style: none;}
+
+p {margin-bottom: 0; .text-style()}
+
+img{
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.container-fluid { padding: 0; }

@@ -1,0 +1,117 @@
+/* CSS para a página de Login */
+
+#login-page {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+    .login-form {
+        background: rgba(0, 0, 0, 0.3);
+        border: 2px solid @primaryColor;
+        border-radius: 10px;
+        min-width: 500px;
+        padding: 80px 70px;
+        position: relative;
+        text-align: center;
+
+        .form-logo {
+            height: 110px;
+        }
+
+        #form-login {
+            position: relative;
+            z-index: 2;
+
+            .form-fields {
+                margin: 60px 0 20px;
+            }
+
+            .input-group {
+                align-items: center;
+                background: #ffffff;
+                border: 1px solid @primaryColor;
+                border-radius: 10px;
+                display: flex;
+                padding: 15px 20px;
+                flex-wrap: nowrap;
+
+                &:first-child {
+                    margin-bottom: 15px;
+                }
+
+                iconify-icon {
+                    color: @primaryColor;
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+
+                input.input-control {
+                    color: #000;
+                    border: none;
+                    font-size: 13px;
+                    padding: 5px 0;
+                    width: 100%;
+
+                    &::-webkit-input-placeholder {
+                        color: @disabledGrayColor;
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: @disabledGrayColor;
+                    }
+
+                    &::placeholder {
+                        color: @disabledGrayColor;
+                    }
+
+                    &:-webkit-autofill,
+                    &:-webkit-autofill:hover,
+                    &:-webkit-autofill:focus,
+                    &:-webkit-autofill:active {
+                        -webkit-box-shadow: 0 0 0 30px white inset !important;
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        border: none;
+                        box-shadow: none;
+                        outline: 0;
+                    }
+                }
+            }
+
+            .error-text {
+                align-items: center;
+                display: flex;
+                margin-bottom: 20px;
+                opacity: 0;
+                visibility: hidden;
+                .soft-transition();
+
+                svg {
+                    color: @redColor;
+                    margin-right: 10px;
+                }
+            }
+
+            .btn-geral {
+                margin-bottom: 20px;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        &:before {
+            content: "";
+            left: 0;
+            height: 100%;
+            filter: blur(100%);
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+        }
+    }
+}

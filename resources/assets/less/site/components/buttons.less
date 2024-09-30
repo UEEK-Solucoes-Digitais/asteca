@@ -1,0 +1,29 @@
+.btn-geral {
+    .btn-style();
+
+    &.btn-submit {
+        padding: 10px 46px;
+    }
+}
+
+.btn-geral-secondary {
+    .btn-style(@background: transparent, @border: 1px solid transparent, @color: @primaryColor, @padding: 10px 30px);
+
+    &.active {
+        background: @primaryColor;
+        color: #fff;
+    }
+
+    &:hover {
+        border-color: @primaryColor;
+    }
+}
+
+.btn-whatsapp {
+    .btn-style(@background: #1B9D5F; @padding: 16px 35px);
+    gap: 10px;
+
+    iconify-icon {
+        font-size: 22px;
+    }
+}

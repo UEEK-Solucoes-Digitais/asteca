@@ -1,0 +1,133 @@
+.about-first {
+    padding-bottom: 120px;
+
+    .about-image {
+        position: absolute;
+        right: 0;
+        top: 250px;
+
+        .about-image-1 {
+            border-radius: 5px 0px 0px 5px;
+            max-height: 434px;
+            object-fit: cover;
+        }
+    }
+}
+
+.about-second {
+    background: @backgroundGrayColor;
+    padding-top: 70px;
+    padding-bottom: 283px;
+
+    h3 {
+        padding-bottom: 128px;
+    }
+
+    h5 {
+        font-size: 26px;
+        margin-bottom: 5px;
+    }
+
+    .items {
+        display: flex;
+        gap: 63px;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            iconify-icon {
+                font-size: 28px;
+            }
+
+            &::before {
+                content: '';
+                background: black;
+                display: inline-block;
+                height: 3px;
+                width: 100%;
+            }
+
+            .soft-transition();
+
+            &:hover {
+                transform: scale(1.02);
+
+                iconify-icon {
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                }
+
+                iconify-icon,
+                h5,
+                p {
+                    color: @primaryColor;
+                }
+
+                &::before {
+                    background: @primaryColor;
+                }
+            }
+        }
+    }
+}
+
+.history-section {
+    padding-bottom: 50px;
+
+    .about-swiper {
+        height: 100%;
+        max-height: 533px;
+        margin-top: -200px;
+        margin-bottom: 70px;
+        position: relative;
+        width: 90%;
+        z-index: 1;
+
+        .swiper-wrapper,
+        .swiper-slide {
+            height: 100%;
+        }
+
+        .image-item {
+            border-radius: 0px 5px 5px 0px;
+            display: block;
+            height: 533px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    .about-image-2 {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .history-flex {
+        p {
+            width: 100%;
+            columns: 2;
+        }
+    }
+
+    .background-linear-gradient-left {
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: rotate(-180deg);
+        width: 10%;
+    }
+
+    .background-linear-gradient-right {
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10%;
+    }
+}

@@ -1,0 +1,154 @@
+/*Estilo de botões do site*/
+
+.btn-geral {
+    .btn-style();
+}
+
+.btn-geral-transparent {
+    .btn-style(@background: #fff, @color: @primaryColor, @border: 1px solid @primaryColor);
+    box-shadow: inset 0 0 0 0 @primaryColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+        box-shadow: inset 0 0 0 1px @primaryColor;
+        background: #fff;
+    }
+
+    &.active {
+        .btn-style();
+    }
+}
+
+.btn-geral-cancel {
+    .btn-style(@background: #FA533B);
+}
+
+.btn-geral-success {
+    .btn-style(@background: @greenColor);
+}
+
+.left-icon {
+    svg,
+    iconify-icon {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+
+a,
+button {
+    .soft-transition();
+
+    &.primary-color:hover {
+        color: lighten(@primaryColor, 15%);
+        .soft-transition();
+    }
+
+    &.geral-text {
+        font-weight: 500;
+    }
+
+    &.no-style-button {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        outline: none;
+        background: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            outline: none;
+            background: none;
+        }
+    }
+}
+
+.btn-action {
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    .soft-transition();
+
+    & + .btn-action {
+        margin-left: 10px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: 0;
+        box-shadow: none;
+        color: #fff;
+    }
+
+    iconify-icon {
+        opacity: 1 !important;
+        font-size: 20px !important;
+    }
+}
+
+.btn-red {
+    background: @redColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: darken(@redColor, 5%);
+    }
+}
+
+.btn-green {
+    background: @greenColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: darken(@greenColor, 5%);
+    }
+}
+
+.btn-blue {
+    background: @blueColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: darken(@blueColor, 5%);
+    }
+}
+
+.btn-yellow {
+    background: @yellowColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: darken(@yellowColor, 5%);
+    }
+}
+
+.btn-purple {
+    background: @purpleColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: darken(@purpleColor, 5%);
+    }
+}
+
+.btn-multiple-actions {
+    opacity: 0;
+    visibility: hidden;
+}

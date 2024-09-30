@@ -1,0 +1,38 @@
+{
+  "resources/assets/js/content-adm/index.js": {
+    "file": "assets/index.0a84c9bf.js",
+    "src": "resources/assets/js/content-adm/index.js",
+    "isEntry": true,
+    "imports": [
+      "_mascaras.56988819.js"
+    ]
+  },
+  "resources/assets/js/site/app.js": {
+    "file": "assets/app.4628be9c.js",
+    "src": "resources/assets/js/site/app.js",
+    "isEntry": true,
+    "imports": [
+      "_mascaras.56988819.js"
+    ],
+    "css": [
+      "assets/app.028243bf.css"
+    ]
+  },
+  "_mascaras.56988819.js": {
+    "file": "assets/mascaras.56988819.js"
+  },
+  "resources/assets/js/site/app.css": {
+    "file": "assets/app.028243bf.css",
+    "src": "resources/assets/js/site/app.css"
+  },
+  "resources/assets/less/site/style.less": {
+    "file": "assets/style.70e90204.css",
+    "src": "resources/assets/less/site/style.less",
+    "isEntry": true
+  },
+  "resources/assets/less/content-adm/style.less": {
+    "file": "assets/style.95026640.css",
+    "src": "resources/assets/less/content-adm/style.less",
+    "isEntry": true
+  }
+}
