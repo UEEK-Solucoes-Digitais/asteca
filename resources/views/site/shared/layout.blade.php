@@ -91,7 +91,7 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.iife.js" init></script>
 
-    @vite(['resources/assets/js/site/app.js'])
+    @vite(['resources/assets/js/site/main.js'])
 </head>
 
 <body>
