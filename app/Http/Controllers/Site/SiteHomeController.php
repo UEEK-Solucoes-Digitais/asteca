@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Controllers\Admin\Si9Controller;
 use App\Models\Gallery;
 use App\Models\Banner;
 
@@ -59,7 +60,7 @@ class SiteHomeController extends Controller
         $user['phone'] = $request->phone;
         $user['message'] = $request->message;
 
-        if (Mail::send(new ContactEmail($user))) {
+        if (Mail::send(new ContactEmail($user)) && Si9Controller::registerLead($user)) {
             return response()->json([
                 'status' => 1,
                 'title' => "Contato enviado com sucesso!",

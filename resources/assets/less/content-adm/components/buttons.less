@@ -152,3 +152,39 @@ button {
     opacity: 0;
     visibility: hidden;
 }
+
+.btn-sync-properties{
+    width: 250px;
+    max-width: unset;
+
+    .static{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .loading-wrapper{
+        display: none;
+    }
+
+    &.loading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: .6;
+        pointer-events: none;
+
+        .static{
+            display: none;
+        }
+
+        .loading-wrapper{
+            display: flex;
+
+            iconify-icon{
+                font-size: 18px;
+            }
+        }
+    }
+}

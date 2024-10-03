@@ -20,34 +20,36 @@
                 @if (count($images) > 0)
                     <div class="property-gallery-area fadeIn">
                         <div class="image">
-                            <a href="{{ url("/img/uploads/gallery/{$images[0]->image}") }}"
-                                data-fancybox="Galeria da propriedade">
-                                <img src="{{ url("/img/uploads/gallery/{$images[0]->image}") }}" alt="imagem do prédio">
+                            @php
+                                $firstImage = $images[0];
+                                $imageUrl = $firstImage->is_from_api == 1 ? $firstImage->image : url('/img/uploads/gallery/' . $firstImage->image);
+                            @endphp
+                            <a href="{{ $imageUrl }}" data-fancybox="Galeria da propriedade">
+                                <img src="{{ $imageUrl }}" alt="imagem do prédio">
                             </a>
                         </div>
 
                         <div class="property-gallery swiper-container">
                             <div class="swiper-wrapper">
                                 @foreach ($images as $image)
+                                    @php
+                                        $imageUrl = $image->is_from_api == 1 ? $image->image : '/img/uploads/gallery/' . $image->image;
+                                        $imageWebpUrl = $image->is_from_api == 1 ? $image->image_webp : '/img/uploads/gallery/' . $image->image_webp;
+                                    @endphp
                                     <div class="swiper-slide">
                                         <button class="change-gallery-image">
-                                            <x-ImageComponent webp="/img/uploads/gallery/{{ $image->image_webp }}"
-                                                image="/img/uploads/gallery/{{ $image->image }}"
-                                                alt="{{ $image->alt_text }}" customClass="swiper-lazy" customWidth="680"
-                                                customHeight="430" />
+                                            <x-ImageComponent
+                                                webp="{{ $imageWebpUrl }}"
+                                                image="{{ $imageUrl }}"
+                                                alt="{{ $image->alt_text }}"
+                                                customClass="swiper-lazy"
+                                                customWidth="680"
+                                                customHeight="430"
+                                            />
                                         </button>
                                     </div>
                                 @endforeach
                             </div>
-
-                            {{-- <div class="swiper-navigation">
-                            <div class="swiper-button-prev">
-                                <iconify-icon icon="akar-icons:chevron-left"></iconify-icon>
-                            </div>
-                            <div class="swiper-button-next">
-                                <iconify-icon icon="akar-icons:chevron-right"></iconify-icon>
-                            </div>
-                        </div> --}}
                         </div>
                     </div>
                 @endif
@@ -114,8 +116,8 @@
                     @foreach ($related_properties as $property)
                         <x-PropertyComponent title="{{ $property->title }}" address="{{ $property->address }}"
                             area="{{ $property->area }}m²" price="{{ $property->price }}" url="{{ $property->url }}"
-                            type="1" image="/img/uploads/properties/{{ $property->image }}"
-                            imageWebp="/img/uploads/properties/{{ $property->image_webp }}" />
+                            type="1" image="{{ $property->is_from_api === 1 ? $property->image : '/img/uploads/properties/' . $property->image }}"
+                            imageWebp="{{ $property->is_from_api === 1 ? $property->image_webp : '/img/uploads/properties/' . $property->image_webp }}" />
                     @endforeach
 
                 </div>

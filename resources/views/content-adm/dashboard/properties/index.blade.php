@@ -14,6 +14,17 @@
                 <iconify-icon icon="akar-icons:plus"></iconify-icon>
                 Adicionar {{ $instance_name }}
             </a>
+
+            <button class="btn-geral btn-yellow ms-2 btn-sync-properties">
+                <div class="static">
+                    <iconify-icon icon="material-symbols:sync"></iconify-icon>
+                    Sincronizar propriedades
+                </div>
+                <div class="loading-wrapper">
+                    <iconify-icon icon="line-md:loading-loop"></iconify-icon>
+                </div>
+            </button>
+
             <button class="btn-geral btn-blue btn-multiple-actions copy-multiple-itens ms-2">
                 <iconify-icon icon="akar-icons:copy"></iconify-icon>
                 Copiar
@@ -88,7 +99,8 @@
         var url_organize = "{{ route('property.organize') }}";
         var url_delete = "{{ route('property.delete') }}";
         var url_delete_multiple = "{{ route('property.delete_multiple') }}";
-        var url_to_redirect = "{{ route('property.list') }}"
-        var url_copy = "{{ route('property.copy') }}"
+        var url_to_redirect = "{{ route('property.list') }}";
+        var url_copy = "{{ route('property.copy') }}";
+        const syncRoute = "{{ route('sync_properties') }}";
     </script>
 @endsection

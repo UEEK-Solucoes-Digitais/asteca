@@ -54,8 +54,13 @@
                 @foreach ($images as $image)
                     @php
                         $class_background = $image['image'] != '' ? 'w-background' : '';
-                        
-                        $style_background = $image['image'] != '' ? "style='background-image: url(/img/uploads/gallery/{$image['image']})'" : '';
+                    
+                        if ($image['image'] != '') {
+                            $image_url = $image['is_from_api'] == 1 ? $image['image'] : '/img/uploads/gallery/' . $image['image'];
+                            $style_background = "style='background-image: url({$image_url})'";
+                        } else {
+                            $style_background = '';
+                        }
                     @endphp
                     <div class='image-item' id='item-{{ $image['id'] }}'>
                         <a class='preview-img gallery {{ $class_background }}' {!! $style_background !!}

@@ -107,34 +107,47 @@
 
                 <div class="geral-grid-div column-2">
 
+                    <div class="infos default-space-between">
 
-                    @foreach ($infos as $info)
                         <div class="default-input-group">
-
                             <label>Informações adicionais</label>
-
+    
                             <input class="geral-input" placeholder="Título" type="text" name="infos_title[]"
-                                maxlength="150" value="{{ $info->info_title }}">
+                                maxlength="150">
                             <input class="geral-input" placeholder="Valor" type="text" name="infos_value[]"
-                                onkeydown="Mascara(this, Valor)"
-                                value="{{ number_format((float) $info->info_value, 2, ',', '.') }}">
-
+                                onkeydown="Mascara(this, Valor)">
+    
                         </div>
-                    @endforeach
+    
+                        @foreach ($infos as $info)
+                            <div class="default-input-group">
+                                <label>Informações adicionais</label>
+    
+                                <input class="geral-input" placeholder="Título" type="text" name="infos_title[]"
+                                    maxlength="150" value="{{ $info->info_title }}">
+                                <input class="geral-input" placeholder="Valor" type="text" name="infos_value[]"
+                                    onkeydown="Mascara(this, Valor)"
+                                    value="{{ number_format((float) $info->info_value, 2, ',', '.') }}">
+                            </div>
+                        @endforeach
+
+                        <div class="buttons d-flex">
+
+                            <button type="button" class="btn-action btn-green plus-item" data-value='infos'>
+                                <iconify-icon icon="akar-icons:plus"></iconify-icon>
+                            </button>
+                            <button type="button" class="btn-action btn-red less-item" data-value='infos' hidden>
+                                <iconify-icon icon="akar-icons:minus"></iconify-icon>
+                            </button>
+        
+        
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <div class="buttons d-flex">
-
-                    <button type="button" class="btn-action btn-green plus-item" data-value='infos'>
-                        <iconify-icon icon="akar-icons:plus"></iconify-icon>
-                    </button>
-                    <button type="button" class="btn-action btn-red less-item" data-value='infos' hidden>
-                        <iconify-icon icon="akar-icons:minus"></iconify-icon>
-                    </button>
-
-
-                </div>
+                
 
             </div>
 

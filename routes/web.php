@@ -37,7 +37,6 @@ Route::namespace("Site")->group(
         Route::any('/contato', [SiteContactController::class, 'index'])->name("site.contact");
         Route::any('/politica-de-cookies', [SiteCookiesController::class, 'index'])->name("site.cookies_policy");
 
-        Route::any('/sendContact', [SiteHomeController::class, 'sendContact'])->name("contact.send");
         Route::any('/getBanner', [SiteHomeController::class, 'getBanner'])->name("site.getBanner");
 
         Route::any('/locationsFilter', [SitePropertyController::class, 'locationsFilter'])->name("locations.filter");
@@ -70,7 +69,6 @@ use App\Http\Controllers\Admin\ReleaseUnityController;
 use App\Http\Controllers\Admin\PagePropertiesController;
 use App\Http\Controllers\Admin\PageConstructionController;
 
-
 Route::namespace("Admin")->group(
     function () {
 
@@ -82,6 +80,7 @@ Route::namespace("Admin")->group(
         );
         Route::any('/loginAdmin', [LoginAdmin::class, 'login'])->name("admin.login");
         Route::any('/logoutAdmin', [LoginAdmin::class, 'logout'])->name("admin.logout");
+
 
         Route::middleware('auth.user')->group(
             function () {
@@ -258,3 +257,21 @@ Route::namespace("Admin")->group(
     }
 
 );
+
+/*
+|--------------------------------------------------------------------------
+| API Si9 Routes
+|--------------------------------------------------------------------------
+|
+| Insira todas as rotas que passam pela API
+|
+*/
+use App\Http\Controllers\Admin\Si9Controller;
+
+Route::middleware('api.token')->group(function(){
+    Route::controller(Si9Controller::class)->group(function(){
+        Route::get('/apiProperties', 'getApiProperties')->name('sync_properties');
+    });
+    
+    Route::any('/sendContact', [SiteHomeController::class, 'sendContact'])->name("contact.send");
+});

@@ -1,6 +1,6 @@
 {
   "resources/assets/js/content-adm/index.js": {
-    "file": "assets/index.0a84c9bf.js",
+    "file": "assets/index.9f40cda1.js",
     "src": "resources/assets/js/content-adm/index.js",
     "isEntry": true,
     "imports": [
@@ -25,14 +25,14 @@
     "file": "assets/app.028243bf.css",
     "src": "resources/assets/js/site/app.css"
   },
-  "resources/assets/less/site/style.less": {
-    "file": "assets/style.70e90204.css",
-    "src": "resources/assets/less/site/style.less",
+  "resources/assets/less/content-adm/style.less": {
+    "file": "assets/style.742acd4b.css",
+    "src": "resources/assets/less/content-adm/style.less",
     "isEntry": true
   },
-  "resources/assets/less/content-adm/style.less": {
-    "file": "assets/style.95026640.css",
-    "src": "resources/assets/less/content-adm/style.less",
+  "resources/assets/less/site/style.less": {
+    "file": "assets/style.ef5a3e0d.css",
+    "src": "resources/assets/less/site/style.less",
     "isEntry": true
   }
 }

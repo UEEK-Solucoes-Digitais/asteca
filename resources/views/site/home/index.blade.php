@@ -83,8 +83,9 @@
                 @foreach ($properties as $property)
                     <x-PropertyComponent title="{{ $property->title }}" address="{{ $property->address }}"
                         area="{{ $property->area }}m²" price="{{ $property->price }}" url="{{ $property->url }}"
-                        type="1" image="/img/uploads/properties/{{ $property->image }}"
-                        imageWebp="/img/uploads/properties/{{ $property->image_webp }}" />
+                        type="1" 
+                        image="{{ $property->is_from_api === 1 ? $property->image : '/img/uploads/properties/' . $property->image }}"
+                        imageWebp="{{ $property->is_from_api === 1 ? $property->image_webp : '/img/uploads/properties/' . $property->image_webp }}"/>
                 @endforeach
             </div>
 
