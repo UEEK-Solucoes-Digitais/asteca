@@ -24,6 +24,8 @@ vendor/
 target/
 dist/
 
+.env
+
 # JetBrains IDE
 .idea/
 
