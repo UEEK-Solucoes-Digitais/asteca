@@ -115,6 +115,22 @@
             position: relative;
             width: 100%;
 
+            .play-button{
+                all: unset;
+                cursor: pointer;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+
+
+                iconify-icon{
+                    font-size: 78px;
+                    color: #FFF;
+                }
+            }
+
             .background{
                 background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
                 position: absolute;

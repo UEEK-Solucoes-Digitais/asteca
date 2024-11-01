@@ -227,6 +227,10 @@ window.loadBannerSwiper = async function () {
 	new Swiper('.banner-swiper.swiper-container', {
 		slidesPerView: 4,
 		direction: 'vertical',
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
 	})
 }
 
@@ -295,6 +299,8 @@ window.loadReleaseSwiper = async function () {
 }
 
 window.clickOnBannerOption = function () {
+    let autoplay = true;
+
 	$(".change-banner-image-js").on("click", function () {
 		if (!$(this).hasClass("active")) {
 			const banner = $(this).data("value");
@@ -324,6 +330,22 @@ window.clickOnBannerOption = function () {
 			});
 		}
 	})
+
+    const buttons = $(".change-banner-image-js");
+
+    setInterval(() => {
+        if (autoplay) {
+            const activeButtonIndex = buttons.index(buttons.filter('.active'));
+            
+            const nextIndex = (activeButtonIndex + 1) % buttons.length;
+            
+            const nextButton = buttons.eq(nextIndex);
+
+            if (!nextButton.hasClass('active')) {
+                nextButton.click(); 
+            }
+        }
+    }, 5000);
 }
 
 window.clickOnPropertyGalleryOption = function () {
@@ -333,6 +355,26 @@ window.clickOnPropertyGalleryOption = function () {
 		$(".property-gallery-area .image img").attr("src", bannerImage)
 		$(".property-gallery-area .image a").attr("href", bannerImage)
 	})
+
+    const buttons = $(".change-gallery-image");
+
+    setInterval(() => {
+        const currentSrc = $(".property-gallery-area .image img").attr("src");
+    
+        const activeButton = buttons.filter(function() {
+            return $(this).find("img").attr("src") === currentSrc;
+        });
+
+        if (activeButton.length > 0) {
+            const activeButtonIndex = buttons.index(activeButton); 
+            const nextIndex = (activeButtonIndex + 1) % buttons.length;
+            const nextButton = buttons.eq(nextIndex);
+
+            nextButton.click();
+        } else {
+            console.log("Nenhum botão ativo encontrado para a imagem atual.");
+        }
+    }, 5000);
 }
 
 window.geralPagination = function () {

@@ -12,6 +12,8 @@ use App\Models\PageAbout;
 use App\Mail\ContactEmail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Construction;
+use App\Models\PageConstruction;
 use App\Models\Property;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -24,10 +26,12 @@ class SiteHomeController extends Controller
         $banners = Banner::where('status', 1)->orderBy('position')->get();
         $page_about = PageAbout::first();
         $images = Gallery::where('status', 1)->where('type', 5)->orderBy('position', 'asc')->get();
-
         $properties = Property::where('status', 1)->orderBy('position', 'asc')->limit(6)->get();
 
-        return view("site.home.index", compact(['page_home', 'banners', 'page_about', 'images', 'properties']));
+        $page_construction = PageConstruction::find($id = 1);
+        $constructions = Construction::where('status', 1)->orderBy('position', 'asc')->limit(4)->get();
+
+        return view("site.home.index", compact(['page_home', 'banners', 'page_about', 'images', 'properties', 'page_construction', 'constructions']));
     }
 
     public function getBanner(Request $request)

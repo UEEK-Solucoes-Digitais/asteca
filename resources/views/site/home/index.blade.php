@@ -54,12 +54,18 @@
             <div class="swiper-wrapper">
                 @foreach ($images as $image)
                     <div class="swiper-slide">
-                        <a class="image-item" href="{{ url("/img/uploads/gallery/{$image->image}") }}"
+                        <a class="image-item" href="{{ $image->alt_text ? $image->alt_text : url("/img/uploads/gallery/{$image->image}") }}"
                             data-fancybox="Galeria Sobre nós" title="{{ $image->alt_text }}"
                             data-caption="{{ $image->alt_text }}" aria-label="{{ $image->alt_text }}">
                             <x-ImageComponent webp="/img/uploads/gallery/{{ $image->image_webp }}"
                                 image="/img/uploads/gallery/{{ $image->image }}" alt="{{ $image->alt_text }}"
                                 customClass="swiper-lazy" customWidth="680" customHeight="430" />
+
+                                @if($image->alt_text)
+                                    <button type="button" class="play-button">
+                                        <iconify-icon icon="weui:play-filled"></iconify-icon>
+                                    </button>
+                                @endif
                             <div class="background"></div>
                         </a>
                     </div>
@@ -67,6 +73,41 @@
 
             </div>
             <div class="swiper-pagination"></div>
+
+        </div>
+    </section>
+
+    <section class="container-fluid constructions-section home-construction geral-section">
+        {{-- <div class="background-grey"></div> --}}
+        <div class="container">
+            <div class="section-header">
+                <h2 class="sequenced-bottom">{{ $page_home->constructions_title }}</h2>
+                <div class="sequenced-bottom">{!! $page_home->constructions_text !!}</div>
+            </div>
+
+            <div class="constructions list-to-paginate">
+                @foreach ($constructions as $key => $construction)
+                    <a class="construction pagination-item sequenced-bottom" data-bs-toggle="modal"
+                        data-bs-target="#modal-construction-{{ $key }}">
+                        <div class="image">
+                            {{-- <img class="image-construction"
+                                src="{{ url('/img/site/images/about-image.png') }}"> --}}
+                            <x-ImageComponent image="/img/uploads/constructions/{{ $construction->image }}"
+                                webp="img/uploads/constructions/{{ $construction->image_webp }}"
+                                alt="Imagem de frente do banner" customClass="background-person" customWidth="500"
+                                customHeight="950" />
+                            <div class="background-linear"></div>
+                        </div>
+                        <div class="text">
+                            <h5>{{ $construction['title'] }}</h5>
+                            <div class="description">{!! $construction['text'] !!}</div>
+                        </div>
+                    </a>
+                @endforeach
+
+            </div>
+
+            <a href="{{ route('site.constructions') }}" class="btn-geral" title="Ver todos">Ver todos</a>
 
         </div>
     </section>

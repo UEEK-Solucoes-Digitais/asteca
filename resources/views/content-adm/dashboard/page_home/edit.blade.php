@@ -10,6 +10,24 @@
         <input type="hidden" name="id" value="{{$page_home->id}}">
         <div class="fields default-space-between form-space">
 
+            <h3>Construções</h3>
+            <div class="blue-background default-space-between">
+                
+                <div class="default-input-group">
+                    <label>Título das construções</label>
+                    <input class="geral-input required" type="text" placeholder="Digite aqui" name="constructions_title" value="{{$page_home->constructions_title}}">
+                </div>
+
+                <div class="default-input-group">
+                    <label>Texto das construções</label>
+                    <textarea class="geral-input required ckeditor-text" type="text" placeholder="Digite aqui" id="constructions_text"
+                        name="constructions_text">{{$page_home->constructions_text}}</textarea>
+                </div>
+
+            </div>
+
+            <h3>Propriedades</h3>
+
             <div class="blue-background default-space-between">
                 
                 <div class="default-input-group">
@@ -24,6 +42,8 @@
                 </div>
 
             </div>
+
+            
 
             <h3>SEO</h3>
 

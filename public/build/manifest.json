@@ -8,7 +8,7 @@
     ]
   },
   "resources/assets/js/site/app.js": {
-    "file": "assets/app.4628be9c.js",
+    "file": "assets/app.1705cd84.js",
     "src": "resources/assets/js/site/app.js",
     "isEntry": true,
     "imports": [
@@ -31,7 +31,7 @@
     "isEntry": true
   },
   "resources/assets/less/site/style.less": {
-    "file": "assets/style.ef5a3e0d.css",
+    "file": "assets/style.bf7f140f.css",
     "src": "resources/assets/less/site/style.less",
     "isEntry": true
   }
