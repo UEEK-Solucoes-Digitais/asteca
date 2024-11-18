@@ -54,8 +54,7 @@
             <div class="swiper-wrapper">
                 @foreach ($gallery as $gallery)
                     <div class="swiper-slide">
-                        <a class="image-item"
-                            href="https://clearviewkitchens.ca/wp-content/uploads/2022/06/modern-kitchen-cabinets.jpg"
+                        <a class="image-item" href="/img/uploads/gallery/{{ $gallery->image }}"
                             data-fancybox="Galeria Sobre nós" title="Lorem ipsum" data-caption="Lorem ipsum"
                             aria-label="Lorem ipsum">
                             <x-ImageComponent image="/img/uploads/gallery/{{ $gallery->image }}"
